@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "My Chrome Extension",
+    "version": "0.1.0",
+    "description": "My first Chrome extension.",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://www.sistemas.segurosrivadavia.com/nwwc/PRD/PROPRE02"],
+            "js": ["content-rivadavia.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+}
